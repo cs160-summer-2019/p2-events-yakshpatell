@@ -44,11 +44,11 @@
 					<div class="p2-circle bg-yellow"></div>
 					<div class="p2-circle bg-yellow"></div>
 					<div class="p2-circle bg-yellow"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
-					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-orange"></div>
+					<div class="p2-circle bg-orange p2-border bord o"></div>
+					<div class="p2-circle bg-orange p2-border bord m"></div>
+					<div class="p2-circle bg-orange reg"></div>
+					<div class="p2-circle bg-orange reg"></div>
+					<div class="p2-circle bg-orange reg"></div>
 					<div class="p2-circle bg-blue"></div>
 					<div class="p2-circle bg-blue"></div>
 					<div class="p2-circle bg-blue p2-border"></div>
@@ -65,41 +65,42 @@
 <script type="text/javascript">
 	// your solution here
   $(document).ready(() => {
+    let $gradientCircle = $("#gradient-circle");
     let $resetButton = $(".btn");
     let $allCircles = $(".p2-circle");
-    let $gradientCircle = $("#gradient-circle");
-    let $purpleCircle = $(".bg-purple");
-    let $greenCircle = $(".bg-green");
-    let $blueCircle = $(".bg-blue");
-    let $orangeCircle = $(".bord");
+    let $purpleCircle = $('.bg-purple');
+    let $greenCircle = $('.bg-green');
+    let $blueCircle = $('.bg-blue');
+    let $orangeCircle = $('.bord');
     
-    $purpleCircle.on("click", () => {
+    $gradientCircle.on('mouseenter', () => {
+      $gradientCircle.hide();
+    })
+    
+    $resetButton.on('click', () => {
+      $allCircles.show();
+    })
+    
+    $purpleCircle.on('click', () => {
       $purpleCircle.hide();
     })
     
-    $greenCircle.on("click", () => {
+    $greenCircle.on('click', () => {
       $greenCircle.hide();
       $blueCircle.hide();
     })
     
-    $orangeCircle.on("click", () => {
+    $orangeCircle.on('click', () => {
       if($orangeCircle.is('o')){
-        $('.m').hide();
-        return;
-      }
+            $('.m').hide();
+            return;
+        }
       $('.o').hide();
     })
     
-    $gradientCircle.on("mouseenter", ()=> {
-      $gradientCircle.hide();
-    })
-    
-    $resetButton.on("click", () => {
-      $allCircles.show();
-    })
+    \
     
   });
-
 </script>
 </body>
 </html>
