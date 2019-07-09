@@ -64,6 +64,41 @@
 
 <script type="text/javascript">
 	// your solution here
+  $(document).ready(() => {
+    let $resetButton = $(".btn");
+    let $allCircles = $(".p2-circle");
+    let $gradientCircle = $("#gradient-circle");
+    let $purpleCircle = $(".bg-purple");
+    let $greenCircle = $(".bg-green");
+    let $blueCircle = $(".bg-blue");
+    let $orangeCircle = $(".bord");
+    
+    $purpleCircle.on("click", () => {
+      $purpleCircle.hide();
+    })
+    
+    $greenCircle.on("click", () => {
+      $greenCircle.hide();
+      $blueCircle.hide();
+    })
+    
+    $orangeCircle.on("click", () => {
+      if($orangeCircle.is('o')){
+        $('.m').hide();
+        return;
+      }
+      $('.o').hide();
+    })
+    
+    $gradientCircle.on("mouseenter", ()=> {
+      $gradientCircle.hide();
+    })
+    
+    $resetButton.on("click", () => {
+      $allCircles.show();
+    })
+    
+  });
 
 </script>
 </body>
